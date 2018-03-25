@@ -1,0 +1,24 @@
+{
+  "name": "docker-demo",
+  "version": "1.0.0",
+  "description": "A demo! For Docker!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crockeo/docker-demo.git"
+  },
+  "author": "Cerek Hillen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/crockeo/docker-demo/issues"
+  },
+  "homepage": "https://github.com/crockeo/docker-demo#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "mysql": "^2.15.0",
+    "sequelize": "^4.37.4"
+  }
+}
