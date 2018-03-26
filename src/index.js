@@ -10,10 +10,6 @@ if (process.env.DB === null || process.env.DB_USER == null || process.env.DB_PAS
   process.exit(1);
 }
 
-console.log(process.env.DB);
-console.log(process.env.DB_USER);
-console.log(process.env.DB_PASS);
-
 // Constructing the Sequelize instance.
 var sequelize = new Sequelize(
   process.env.DB,
