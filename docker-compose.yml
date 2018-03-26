@@ -17,6 +17,7 @@ services:
       - 80
     volumes:
       - .:/application/
+      - /application/node_modules/
     environment:
       PORT: 80
       DB: HPEInfoSearch
