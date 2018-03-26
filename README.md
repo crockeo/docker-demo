@@ -22,12 +22,25 @@ Once you have Docker, download this repository. Navigate into the directory,
 and execute:
 
 ```bash
-$ docker init
+$ docker-compose build
+$ docker-compose up -d
 ```
 
-### Setting up Your Development Environment
+Now you'll have this Docker instance running on your computer! Navigate to
+[localhost:8080](http://localhost:8080) to see the page in action! The page
+should come up, and everything should be working! Near the bottom of the page,
+there will be a header "Database Status". If it doesn't say "Success!" then
+we've got a problem, and feel free to reach out on Slack!
 
+Once you're ready to turn the server off, just enter the following into your
+console.
 
+```bash
+$ docker-compose down --volumes
+```
+
+If you're on the alpha dev team (I'm looking @ you William) then we can spend
+some extra time talking about what each of these commands mean.
 
 ### License
 
