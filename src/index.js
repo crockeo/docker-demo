@@ -4,14 +4,13 @@ var express   = require('express'),
 
 var app = express();
 
-app.get('/', (req, res) => {
-  res.status(200).send('Hello world!');
-});
+app.use(express.static(__dirname + '/content'));
 
-app.listen(8000, (err) => {
+const port = process.env.PORT || 8000;
+app.listen(port, (err) => {
   if (err) {
     console.log('Failed to launch server.');
     console.log(err);
   } else
-    console.log('Server started on :80');
+    console.log('Server started on :' + port);
 });

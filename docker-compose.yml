@@ -1,0 +1,32 @@
+version: '2'
+
+# Creating the MySQL volume
+volumes:
+  database_data:
+    driver: local
+
+services:
+  # The Node.js container
+  node:
+    build: ./
+    expose:
+      - 80
+    volumes:
+      - .:/application/
+    environment:
+      PORT: 80
+    ports:
+      - "127.0.0.1:8080:80"
+
+  # The MySQL container
+  mysql:
+    image: mysql:latest
+    expose:
+      - 3306
+    volumes:
+      - database_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: HPEInfoSearch
+      MYSQL_USER: CheckMyGitHub
+      MYSQL_PASSWORD: CheckMyGithub
