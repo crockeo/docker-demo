@@ -9,12 +9,20 @@ services:
   # The Node.js container
   node:
     build: ./
+    depends_on:
+      - mysql
+    links:
+      - mysql
     expose:
       - 80
     volumes:
       - .:/application/
     environment:
       PORT: 80
+      DB: HPEInfoSearch
+      DB_HOST: mysql
+      DB_USER: CheckMyGitHub
+      DB_PASS: CheckMyGitHubPW
     ports:
       - "127.0.0.1:8080:80"
 
@@ -29,4 +37,4 @@ services:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: HPEInfoSearch
       MYSQL_USER: CheckMyGitHub
-      MYSQL_PASSWORD: CheckMyGithub
+      MYSQL_PASSWORD: CheckMyGitHubPW
